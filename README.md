@@ -2,7 +2,7 @@
  
 You will be able to Buy ans sell tokens
 
-![Home page](https://github.com/chanceDira/EthSwap-Blockchain/blob/main/virtual/home.png)
+![Home page](https://github.com/chanceDira/EthSwap-Blockchain/blob/main/virtual/home1.png)
 
 ![Home page](https://github.com/chanceDira/EthSwap-Blockchain/blob/main/virtual/metamask.png)
 
