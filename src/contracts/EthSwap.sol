@@ -1,3 +1,4 @@
+
 pragma solidity 0.5.16;
 
 import './Token.sol';
@@ -5,7 +6,7 @@ import './Token.sol';
 contract EthSwap {
     string public name = 'EthSwap Instant Exchange'; //Stae variable
     Token public token;
-    uint public rate = 100;
+    uint public rate = 15470;
 
     event TokensPurchased(
         address account,
@@ -28,7 +29,7 @@ contract EthSwap {
 
     function buyTokens() public payable {  
         // #payable allows us to send ether when we call this function
-        //Redemption rate = # of tokens they receive for 1 ether      e.g 1eth = 100 Dapp
+        //Redemption rate = # of tokens they receive for 1 ether      e.g 1 Eth = 15470 TFB
      
         //Amount of Ethereum * Redemption rate
         uint tokenAmount = msg.value * rate;    //msg.value , amount of ether

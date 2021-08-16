@@ -27,7 +27,7 @@ contract('EthSwap', ([deployer, investor]) => {
  
         it('contract has a name', async () => {
             const name = await token.name()
-            assert.equal(name, 'DApp BTC Token')
+            assert.equal(name, 'TFB Token')
         })
     })
 
@@ -56,12 +56,12 @@ contract('EthSwap', ([deployer, investor]) => {
         it('Allows user to instantly purchase tokens from ethSwap for a fixed price', async () => {
            // Check investor token balance after purchase
            let investorBalance = await token.balanceOf(investor)
-           assert.equal(investorBalance.toString(), tokens('100'))
+           assert.equal(investorBalance.toString(), tokens('15470'))
 
            //Check ethSwap balance after purchase
            let ethSwapBalance
            ethSwapBalance = await token.balanceOf(ethSwap.address)
-           assert.equal(ethSwapBalance.toString(), tokens('999900'))
+           assert.equal(ethSwapBalance.toString(), tokens('984530'))
 
            ethSwapBalance = await web3.eth.getBalance(ethSwap.address)
            assert.equal(ethSwapBalance.toString(), web3.utils.toWei('1', 'Ether'))
@@ -70,8 +70,8 @@ contract('EthSwap', ([deployer, investor]) => {
            const event = result.logs[0].args
            assert.equal(event.account, investor)
            assert.equal(event.token, token.address)
-           assert.equal(event.amount.toString(), tokens('100').toString())
-           assert.equal(event.rate.toString(), '100')
+           assert.equal(event.amount.toString(), tokens('15470').toString())
+           assert.equal(event.rate.toString(), '15470')
         })
     })
 
@@ -79,9 +79,9 @@ contract('EthSwap', ([deployer, investor]) => {
         let result 
         before(async () => {
             //investor must approve tokens before the purchase
-            await token.approve(ethSwap.address, tokens('100'), { from: investor })
+            await token.approve(ethSwap.address, tokens('15470'), { from: investor })
             //Investor sells tokens
-            result = await ethSwap.sellTokens(tokens('100'), { from: investor })
+            result = await ethSwap.sellTokens(tokens('15470'), { from: investor })
         })
 
 
@@ -103,11 +103,11 @@ contract('EthSwap', ([deployer, investor]) => {
            const event = result.logs[0].args
            assert.equal(event.account, investor)
            assert.equal(event.token, token.address)
-           assert.equal(event.amount.toString(), tokens('100').toString())
-           assert.equal(event.rate.toString(), '100')
+           assert.equal(event.amount.toString(), tokens('15470').toString())
+           assert.equal(event.rate.toString(), '15470')
 
            // Failure: investor can't sell more tokens than they have
-           await ethSwap.sellTokens(tokens('500'), { from: investor }).should.be.rejected;
+           await ethSwap.sellTokens(tokens('65470'), { from: investor }).should.be.rejected;
    
         })
     })

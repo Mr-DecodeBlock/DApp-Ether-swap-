@@ -7,6 +7,7 @@ import EthSwap from '../abis/EthSwap.json'
 import Token from '../abis/Token.json'
 
 
+
 class App extends Component {
 
   async componentWillMount() {
@@ -112,7 +113,7 @@ class App extends Component {
     let content
     let loading = true
     if(this.state.loading) {
-      content = <a id='loader' className='text-center'>Loading...</a>
+      content = <a id='loader' className='text-center text-muted'>Loading...</a>
     } else {
       content = <Main 
         ethBalance={this.state.ethBalance} 
@@ -129,7 +130,7 @@ class App extends Component {
             <main role="main" className="col-lg-12 ml-auto mr-auto" style={{maxWidth: '600px'}}>
               <div className="content mr-auto ml-auto">
                 <a
-                  href="http://www.google.com/"
+                  href="https://www.truefeedback.io/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

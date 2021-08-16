@@ -1,10 +1,15 @@
 pragma solidity 0.5.16;
 
 contract Token {
-    string  public name = "DApp BTC Token";
-    string  public symbol = "DAPP BTC";
+    string  public name = "TFB Token";
+    string  public symbol = "TFB";
     uint256 public totalSupply = 1000000000000000000000000; // 1 million tokens
     uint8   public decimals = 18;
+
+    /*
+    Wei is the smallest denomination of ether—the cryptocurrency coin 
+    used on the Ethereum network. One ether = 1,000,000,000,000,000,000 wei (1018)
+    */
 
 
 

@@ -23,7 +23,7 @@ class BuyForm extends Component {
             console.log('purchasing tokens...')
         }}>
             <div>
-                <label className='float-left'><b>Input</b></label>
+                <span className='float-left text-muted'>Input</span>
                 <span className='float-right text-muted'>
                     Balance: {window.web3.utils.fromWei(this.props.ethBalance, 'Ether')}
                 </span>
@@ -34,7 +34,7 @@ class BuyForm extends Component {
                     onChange={(event) =>{
                         const etherAmount = this.input.value.toString()
                         this.setState({ 
-                            output: etherAmount * 100
+                            output: etherAmount * 15470
                          })
                          //console.log(this.state.output)
                     }}
@@ -44,18 +44,18 @@ class BuyForm extends Component {
                     required />
                 <div className='input-group-append'>
                     <div className='input-group-text'>
-                        <img src='' height='32' alt='' />
-                        &nbsp;&nbsp;&nbsp; ETH
+                        <img src='https://cdn.iconscout.com/icon/free/png-256/ethereum-1-283135.png' height='32' alt='' />
+                        &nbsp; ETH
                     </div>
                 </div>
             </div>
             <div>
-                <label className='float-left'><b>Output</b></label>
+                <span className='float-left text-muted'>Output</span>
                 <span className='float-right text-muted'>
                     Balance: {window.web3.utils.fromWei(this.props.tokenBalance, 'Ether')}
                     {/* Balance: 0 */}
-                   
                 </span>
+                
             </div>
             <div className='input-group mb-2'>
                 <input type='text'
@@ -65,16 +65,16 @@ class BuyForm extends Component {
                     disabled />
                 <div className='input-group-append'>
                     <div className='input-group-text'>
-                        <img src='' height='32' alt='' />
-                        &nbsp; DApp
+                        <img src={require("./logo.png")} height='32' alt='' />
+                        &nbsp; TFB
                     </div>
                 </div>
             </div>
             <div className='mb-5'>
                 <span className='float-left text-muted'>Exchange Rate</span>
-                <span className='float-right text-muted'>1 ETH = 100 DApp BTC</span>
+                <span className='float-right text-muted'>1 ETH = 15470 TFB</span>
             </div>
-            <button type='submit' className='btn btn-primary btn-block btn-lg'>SWAP!</button>
+            <button type='submit' className='btn btn-dark btn-block btn-lg'>SWAP!</button>
         </form>
         );
   }
